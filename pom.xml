@@ -14,7 +14,7 @@
         <postgres.version>42.7.2</postgres.version>    
         <java-validation.version>2.0.1.Final</java-validation.version> 
         <dockerfile-maven-version>1.4.13</dockerfile-maven-version>
-        <maven.compiler.release>17</maven.compiler.release>
+        <maven.compiler.release>21</maven.compiler.release>
     </properties>
     <dependencyManagement>
         <dependencies>
@@ -82,7 +82,7 @@
                     </execution>
                 </executions>
             </plugin>        
-            <!--   <plugin>
+             <plugin>
                 <groupId>com.spotify</groupId>
                 <artifactId>dockerfile-maven-plugin</artifactId>
                 <version>${dockerfile-maven-version}</version>                               
@@ -92,18 +92,18 @@
                         <phase>package</phase>
                         <goals>                                              
                             <goal>build</goal>
-                           <goal>push</goal>
+                     
                         </goals>
                     </execution>
                 </executions>
                 <configuration>                       
-                    <repository>digitalthinking/microservice-docker-${project.artifactId}</repository>
+                    <repository>collection/microservice-docker-${project.artifactId}</repository>
                     <tag>${project.version}</tag>
                     <buildArgs>
-                        <JAR_FILE>${project.build.finalName}.jar</JAR_FILE>
+                        <JAR_FILE>/target/${project.build.finalName}.jar</JAR_FILE>
                     </buildArgs>
                 </configuration>
-            </plugin>-->  
+            </plugin> 
             
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
