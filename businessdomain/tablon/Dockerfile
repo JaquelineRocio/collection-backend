@@ -8,10 +8,10 @@ RUN addgroup -g 1028 devopsc \
 
 # Create a new mount point at /tmp on native host because a volume is more efficient and faster than filesystem
 VOLUME /tmp
-
+# Paso de depuración: listar los archivos en la carpeta target
+RUN ls -l
 # Copiamos el jar a la imagen
 ARG JAR_FILE
-
 
 COPY ${JAR_FILE} /tmp/app.jar
 
